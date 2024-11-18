@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedevs - Os Mininu</title>
+
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/estilos.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./src/imagens/pokemon.png" sizes="32x32" />
+
+    <style>  .footer-player {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      padding: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      z-index: 1000;
+  }
+
+  .controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+  }
+
+  .play-button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      transition: background-color 0.3s;
+  }
+
+  .play-button:hover {
+      background-color: #45a049;
+  }
+
+  .progress-bar {
+      flex-grow: 1;
+      height: 5px;
+      background-color: #555;
+      cursor: pointer;
+      border-radius: 2.5px;
+      max-width: 300px;
+  }
+
+  .progress {
+      height: 100%;
+      background-color: #4CAF50;
+      border-radius: 2.5px;
+      width: 0%;
+  }
+
+  .time {
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      min-width: 50px;
+      text-align: center;
+  }
+
+  .volume-control {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+  }
+
+  .volume-slider {
+      width: 100px;
+      height: 5px;
+      -webkit-appearance: none;
+      background-color: #555;
+      border-radius: 2.5px;
+      outline: none;
+  }
+
+  .volume-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 15px;
+      height: 15px;
+      background-color: #4CAF50;
+      border-radius: 50%;
+      cursor: pointer;
+  }
+
+  .volume-icon {
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+  }</style>
+  </head>
+
+  <body>
+    
+    <main>
+      <div class="pokedevs">
+        <div class="cartoes-pokedev">
+          <div class="cartao-pokedev tipo-eletrico aberto" id="cartao-devchu">
+            <div class="cartao-topo">
+              <div class="detalhes">
+                <h2 class="nome">Japonegro</h2>
+                <span>#001  </span>
+              </div>
+
+              <span class="tipo">Oriental</span>
+
+              <div class="cartao-imagem">
+                <img src="./src/imagens/japonegro.png" alt="Japonegro" />
+              </div>
+            </div>
+
+            <div class="cartao-informacoes">
+              <div class="descricao">
+                <h3>Descrição</h3>
+
+                <p>
+                  Quando se depara com um desafio, Japonegro não se deixa abalar. A tensão que sente é o combustível que o impulsiona a melhorar. Como um mestre no controle do sua wave, ele canaliza toda a sua energia em busca da perfeição. Cada movimento no jogo, assim como cada linha de código, é analisado com precisão. Ele não para até encontrar a solução, e, assim como um jogador de elite, transforma cada obstáculo em uma oportunidade para brilhar ainda mais.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cartao-pokedev tipo-fogo" id="cartao-codevee">
+            <div class="cartao-topo">
+              <div class="detalhes">
+                <h2 class="nome">Big Z</h2>
+                <span>#003</span>
+              </div>
+
+              <span class="tipo">Adormecido</span>
+
+              <div class="cartao-imagem">
+                <img src="./src/imagens/Big-Z.png" alt="Big-Z" />
+              </div>
+            </div>
+
+            <div class="cartao-informacoes">
+              <div class="descricao">
+                <h3>Descrição</h3>
+                <p>
+                  Ele é um cara cumprido e bigodudo, sempre relaxando e dormindo, mas quando acorda, é só para jogar CS
+                  . Sua dedicação ao jogo é inabalável, e embora passe a maior parte do tempo descansando, sua habilidade no jogo é impressionante. Ele se adapta a qualquer situação no CS com facilidade, sempre evoluindo no seu próprio ritmo, sem pressa, mas com uma precisão imbatível quando é hora de agir.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cartao-pokedev tipo-agua" id="cartao-psycoder">
+            <div class="cartao-topo">
+              <div class="detalhes">
+                <h2 class="nome">Biel</h2>
+                <span>#004</span>
+              </div>
+
+              <span class="tipo">Confuso</span>
+
+              <div class="cartao-imagem">
+                <img src="./src/imagens/Biel.png" alt="Biel" />
+              </div>
+            </div>
+
+            <div class="cartao-informacoes">
+              <div class="descricao">
+                <h3>Descrição</h3>
+                <p>
+                  Um cara que curte muito seu Gol Special 2000 e a vibe tranquila de fumar um beck. Sempre relaxado, mas quando a mente está fluindo, ele tem uma habilidade quase mágica de resolver qualquer coisa com facilidade, seja no trânsito ou no dia a dia. Sua alegria vem de pequenas coisas, como o ronco do motor do carro e o prazer de estar no momento presente, sem pressa. Quando a vida aperta, ele só respira fundo, se conecta com a paz interior e, de alguma forma, sempre encontra uma solução.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cartao-pokedev tipo-fogo" id="cartao-charmandev">
+            <div class="cartao-topo">
+              <div class="detalhes">
+                <h2 class="nome">Mp Sinistro</h2>
+                <span>#005</span>
+              </div>
+
+              <span class="tipo">Raivoso/Nego Doce</span>
+
+              <div class="cartao-imagem">
+                <img src="./src/imagens/Mp-Sinistro.png" alt="Mp-Sinistro" />
+              </div>
+            </div>
+
+            <div class="cartao-informacoes">
+              <div class="descricao">
+                <h3>Descrição</h3>
+
+                <p>
+                  Esse rapaz é o tipo de cara que adora se divertir jogando qualquer jogo, até aqueles que todo mundo considera ruim. Mas quando está jogando League of Legends e alguém rouba sua jungle, ele explode de raiva como se o mundo fosse acabar. A frustração é grande, mas no fundo ele sempre dá risada, dá a volta por cima e se torna o cara mais tranquilo e bonzinho depois da tempestade. No final das contas, o que importa mesmo é se divertir e seguir em frente, porque ele sabe que a vida é boa e ele está feliz do seu jeito.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cartao-pokedev tipo-agua" id="cartao-scriptle">
+            <div class="cartao-topo">
+              <div class="detalhes">
+                <h2 class="nome">Bina</h2>
+                <span>#002</span>
+              </div>
+
+              <span class="tipo">Raivoso/Sábio</span>
+
+              <div class="cartao-imagem">
+                <img src="./src/imagens/Bina.png" alt="Bina" />
+              </div>
+            </div>
+
+            <div class="cartao-informacoes">
+              <div class="descricao">
+                <h3>Descrição</h3>
+                <p>
+                  Um jovem tranquilo, com seu coco de loro nas mãos, joga de Lee Sin com habilidade e precisão. Por trás de sua calma, há uma fera incontrolável que se solta nas horas de tensão, impulsionando suas jogadas com uma força explosiva. Ele domina o jogo com equilíbrio, mas sua fúria interna nunca está longe de emergir. Acende, puxa, prende, passa
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cartao-pokedev tipo-fada" id="cartao-devlypuff">
+            <div class="cartao-topo">
+              <div class="detalhes">
+                <h2 class="nome">Braia</h2>
+                <span>#006</span>
+              </div>
+
+              <span class="tipo">Assustado/Desconfiado</span>
+
+              <div class="cartao-imagem">
+                <img src="./src/imagens/braia.png" alt="Braia" />
+              </div>
+            </div>
+
+            <div class="cartao-informacoes">
+              <div class="descricao">
+                <h3>Descrição</h3>
+                <p>
+                  A expressão "trabalhe enquanto eles dormem" definitivamente não faz parte do vocabulário desse rapaz. Afinal, o que ele realmente quer é aproveitar o tempo para namorar e curtir a vida, sem se preocupar com mais nada. Esqueceu o tempo em que passava horas no League of Legends; agora, o que importa são os momentos a dois, as conversas longas e as risadas. Ele também tem o seu jeito único de relaxar e, às vezes, isso inclui um pouco de "soltura de gás", porque sim, esse rapaz adora descontrair de todas as formas possíveis — até com uns peidinhos ocasionais que sempre arrancam uma risada. No final, ele encontrou seu equilíbrio: ser feliz, sem pressa e com muito bom humor, ao lado de quem importa.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="listagem">
+          <ul>
+            <li class="pokedev ativo" id="devchu">
+              <img src="./src/imagens/japonegro.png" alt="Japonegro" />
+              <span>Japonegro</span>
+            </li>
+            <li class="pokedev" id="scriptle">
+              <img src="./src/imagens/Bina.png" alt="Bina" />
+              <span>Bina</span>
+            </li>
+            <li class="pokedev" id="codevee">
+              <img src="./src/imagens/Big-Z.png" alt="Big-Z" />
+              <span>Big Z</span>
+            </li>
+            <li class="pokedev" id="psycoder">
+              <img src="./src/imagens/Biel.png" alt="Biel" />
+              <span>Biel</span>
+            </li>
+            <li class="pokedev" id="charmandev">
+              <img src="./src/imagens/Mp-Sinistro.png" alt="Mp-Sinistro" />
+              <span>Mp Sinistro</span>
+            </li>
+            <li class="pokedev" id="devlypuff">
+              <img src="./src/imagens/braia.png" alt="Braia" />
+              <span>Braia</span>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </main>
+
+
+    <audio id="audioPlayer" src="/src/audio/Creep.mp3" preload="metadata"></audio>
+
+    <div class="footer-player">
+        <div class="controls">
+            <button class="play-button" id="playButton">▶</button>
+        </div>
+        <div class="time" id="currentTime">0:00</div>
+        <div class="progress-bar" id="progressBar">
+            <div class="progress" id="progress"></div>
+        </div>
+        <div class="time" id="duration">0:00</div>
+        <div class="volume-control">
+            <span class="volume-icon" id="volumeIcon">🔊</span>
+            <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.1" value="1">
+        </div>
+    </div>
+    <script src="./src/js/index.js" defer >
+
+
+
+    </script>
+ 
+  </body>
+</html>
