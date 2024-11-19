@@ -99,10 +99,17 @@ main {
 
 .tipo-fogo {
     background-color: #ff0000d2;
+   
 }
 
+.tipo-bruxa {
+    background-color: #ff00bfd2;
+
+
+}
 .tipo-agua {
     background-color: #00f815;
+  
 }
 
 .tipo-grama {
@@ -111,6 +118,10 @@ main {
 
 .tipo-trevas {
     background-color: #BA68C8;
+}
+
+.tipo-divino {
+    background-color: #00ccff;
 }
 
 .tipo-fada {
@@ -153,6 +164,7 @@ main {
 .listagem .pokedev.ativo {
     background-color: #fa6668;
 }
+
 
 
 
